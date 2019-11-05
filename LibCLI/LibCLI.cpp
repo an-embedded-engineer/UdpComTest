@@ -30,6 +30,13 @@ namespace LibCLI
             this->m_ManagedUdpSender->Send(managed_message, port);
         }
 
+        void SendAsync(std::string& message, int port) override
+        {
+            System::String^ managed_message = msclr::interop::marshal_as<System::String^>(message);
+
+            this->m_ManagedUdpSender->SendAsync(managed_message, port);
+        }
+
     private:
         gcroot<UdpComTest::LocalUdpSender^> m_ManagedUdpSender;
     };

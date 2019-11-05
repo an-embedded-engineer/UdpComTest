@@ -12,7 +12,7 @@ int main()
         std::cout << "Input Tx Message>";
         std::string message;
         std::cin >> message;
-        sender->Send(message, 2000);
+        sender->SendAsync(message, 2000);
 
         if (message == "exit")
         {

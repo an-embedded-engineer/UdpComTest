@@ -13,6 +13,7 @@ namespace LibCLI
         UdpSender() = default;
         virtual ~UdpSender() = default;
         virtual void Send(std::string& message, int port) = 0;
+        virtual void SendAsync(std::string& message, int port) = 0;
     private:
         UdpSender(const UdpSender&) = delete;
         UdpSender(UdpSender&&) = delete;
